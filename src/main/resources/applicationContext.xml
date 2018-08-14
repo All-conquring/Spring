@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+       http://www.springframework.org/schema/mvc 
+       http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+       
+       
+       <bean id="timo" class="com.aaron.entity.User">
+       		<property name="stname" value="提莫"></property>
+       </bean>
+       
+       <!-- 打印机 -->
+       <bean id="a4" class="com.aaron.entity.impl.A4Paper"/>
+       <bean id="a5" class="com.aaron.entity.impl.A5Paper"/>
+       <bean id="red" class="com.aaron.entity.impl.RedColor"/>
+       <bean id="black" class="com.aaron.entity.impl.BlackColor"/>
+       
+       <bean id="hp" class="com.aaron.entity.Printer">
+       		<property name="inkbox" ref="red"></property>
+       		<property name="paper" ref="a5"></property>
+       </bean>
+       
+       
+       <!-- 电脑 -->
+       <bean id="blackbat" class="com.aaron.entity.impl._BlackBat"/>
+       <bean id="whitebat" class="com.aaron.entity.impl._WhiteBat"/>
+       
+       <bean id="san" class="com.aaron.entity.impl._SanDisk"/>
+       <bean id="jing" class="com.aaron.entity.impl._Jing"/>
+       
+       <bean id="razer" class="com.aaron.entity.impl._Razer"/>
+        <bean id="cherry" class="com.aaron.entity.impl._Cherry"/>
+       
+       <bean id="computer" class="com.aaron.entity.Computer">
+       		<property name="keyboard" ref="razer"></property>
+       		<property name="mouse" ref="whitebat"></property>
+       		<property name="udisk" ref="jing"></property>
+       </bean>
+       
+</beans>
